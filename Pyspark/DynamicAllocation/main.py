@@ -43,6 +43,9 @@ if __name__=="__main__":
         .filter(col("row_number") == "1") \
         .select("Color","State", "Total").orderBy("Color").show()
 
+    time.sleep(80) #sleep for 80 seconds to give time for executors to be idle
+    #assuming default timeout of 60 seonds 
+
     LOGGER.info("Getting the color with the greatest count for each state")
 
     #Determine for each state which mnm_color has the greatest quantity.
