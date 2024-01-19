@@ -13,14 +13,6 @@ if __name__=="__main__":
              .appName("Dynamic Allocation Experiment")
              .getOrCreate())
 
-
-    #We could simply use the 'print' function for logging
-    #but that isn't a good habit to develop.
-    #As such, using the log4j facility spark uses. 
-    log4jLogger = spark.sparkContext._jvm.org.apache.log4j 
-    LOGGER = log4jLogger.LogManager.getLogger(__name__)
-    LOGGER.info("Created logger")
-
     file_path = sys.argv[1]
 
     df = (spark.read.format("csv")
